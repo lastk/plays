@@ -1,0 +1,21 @@
+<img src="https://dl.dropboxusercontent.com/u/8178/icon.png" alt="" style="width: 128px; height:128px">
+
+<%= render 'share' %>
+
+<!-- current games -->
+<div class="page-header">
+  <h2>Current Games</h2>
+</div>
+
+<ul>
+  <%= render partial: "game", collection: @current %>
+</ul>
+
+<!-- old games -->
+<div class="page-header" style="margin-top: 50px;">
+  <h3>Games I lost interest in</h3>
+</div>
+
+<ul>
+  <%= render partial: "game", collection: @finished %>
+</ul>

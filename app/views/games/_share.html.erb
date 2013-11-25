@@ -1,0 +1,23 @@
+<% if sharing_message.present? %>
+<div style="background-color: #f1f1f1; width: 400px; padding: 20px; margin-top: 20px;">
+  <h3 style="margin-top:0px;">Woot, just starting a game!</h3>
+  <hr>
+  <div style="background-color: #ddd; padding: 10px; margin: 5px; width: 340px">
+    <em>"<%= sharing_message %>"</em>
+  </div>
+  <hr>
+  <ul>
+    <li><a href="https://twitter.com/share?&source=tweetbutton&text=<%= sharing_message %>" target="blank">Share with Twitter followers</a></li>
+    <li><%= link_to 'Share on Facebook', '#', :class => "fb_share"  %></li>
+    <li><a href="/">Close this</a></li>
+  </ul>
+</div>
+
+<%= facebook_share_once %>
+
+<script type="text/javascript">
+<%= raw(facebook_share :name => "Rodrigo started playing #{@started.title}",
+  :picture => "https://dl.dropboxusercontent.com/u/8178/icon.png",
+  :description => sharing_message) %>
+</script>
+<% end %>
